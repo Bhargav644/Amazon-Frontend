@@ -28,7 +28,9 @@ function Home() {
       <div className="home__container">
         <Slider images={backgroundImages} />
       </div>
-      <Offers />
+      <div className="offers__container">
+        <Offers></Offers>
+      </div>
     </div>
   );
 }

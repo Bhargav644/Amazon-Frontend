@@ -50,7 +50,7 @@ function Header() {
             headerServices.map((service, index) => <option>{service}</option>)}
         </select>
         <input
-          autocomplete="off"
+          autoComplete="off"
           id="input"
           type="text"
           className="header__searchinput"

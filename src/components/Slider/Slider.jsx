@@ -25,6 +25,7 @@ const Slider = ({ images }) => {
       clearInterval(slider);
     };
   }, [index]);
+
   return (
     <div className="slider">
       <div className="slider__centre">

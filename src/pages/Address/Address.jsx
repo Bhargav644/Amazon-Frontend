@@ -5,7 +5,9 @@ import getLocation from "./functions";
 function Address() {
   return (
     <div className="address__main">
-      <div className="background__mask"></div>
+      <Link to="/">
+        <div className="background__mask"></div>
+      </Link>
       <div className="main">
         <header className="main__header">
           <p className="header__text">Choose your location</p>{" "}

@@ -17,7 +17,7 @@ function App() {
               <Header /> <Home />
             </Fragment>
           }
-        />{" "}
+        />
         <Route
           path="/address"
           exact
@@ -26,8 +26,17 @@ function App() {
               <Header /> <Home /> <Address />
             </Fragment>
           }
-        />{" "}
-      </Routes>{" "}
+        />
+        <Route
+          path="/login"
+          exact
+          element={
+            <Fragment>
+              <Header /> <Home />
+            </Fragment>
+          }
+        />
+      </Routes>
     </Router>
   );
 }

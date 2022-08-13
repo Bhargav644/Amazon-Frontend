@@ -24,11 +24,13 @@ Link {
     width: 370px;
     height: 240px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #d8dbdb;
+    /* box-shadow: 0px 0px 10px #d8dbdb; */
     background-color: rgb(250, 253, 253);
     position: absolute;
     left: 37%;
+    overflow: hidden;
     z-index: 110;
+    transform: translateY(-350px);
 }
 
 .main__header {
