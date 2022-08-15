@@ -12,6 +12,7 @@ function Offers() {
           if (Object.keys(ourOffers[key]).length > 4) {
             return (
               /**each offer box here */
+              // <Link>
               <div className="offers__box">
                 <h2 className="heading">{ourOffers[key]["heading"]}</h2>
                 <br />
@@ -37,6 +38,7 @@ function Offers() {
                   </a>
                 </div>
               </div>
+              // </Link>
             );
           } else if (Object.keys(ourOffers[key]).length > 2) {
             return (

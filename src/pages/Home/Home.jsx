@@ -11,6 +11,7 @@ import Image7 from "../../Images/background-image7.jpg";
 import Image8 from "../../Images/background-image8.jpg";
 import Slider from "../../components/Slider/Slider";
 import Offers from "../../components/Offers/Offers";
+import Deals from "../../components/Deals/Deals";
 function Home() {
   const backgroundImages = [
     Image1,
@@ -30,6 +31,7 @@ function Home() {
       </div>
       <div className="offers__container">
         <Offers></Offers>
+        <Deals></Deals>
       </div>
     </div>
   );

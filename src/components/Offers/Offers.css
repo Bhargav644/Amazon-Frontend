@@ -3,7 +3,7 @@
     height: auto;
     display: grid;
     gap: 1.5rem;
-    transform: translateY(-25px);
+    transform: translateY(0px);
     background-color: rgba(145, 145, 145, 0.2);
 }
 
@@ -11,7 +11,7 @@
 .offers__main--line2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.5em;
     margin: auto 1.5rem;
     background-color: transparent;
 }
@@ -61,7 +61,7 @@
 }
 
 .offers__link {
-    font-weight: 100;
+    font-weight: 400;
     font-size: 13px;
     text-align: left;
     text-decoration: none;
@@ -105,7 +105,7 @@
 
 .name {
     font-size: 13px;
-    font-weight: 100;
+    font-weight: 400;
     height: 30px;
     margin: 0px 15px;
     color: #fff;
@@ -117,7 +117,7 @@
     margin: 0px 15px;
     color: #fff;
     font-size: 13px;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 @media only screen and (max-width:700px) {
@@ -138,6 +138,10 @@
     .offers__main--line1,
     .offers__main--line2 {
         overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+    .Box3 {
+        display: none;
     }
 }
 
