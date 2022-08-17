@@ -1,13 +1,13 @@
 from flask import Flask
-from script import Deals
+from Deals import Deals
 from db import getData, setData
 
 app = Flask(__name__)
 
 
 @app.route("/<name>")
-def getDeals(name):
-    Deals()
+def fetchData(name):
+    # Deals()
     return getData(name)
 
 

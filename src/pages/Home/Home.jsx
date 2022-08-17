@@ -27,11 +27,11 @@ function Home() {
     <div className="home">
       <Heading />
       <div className="home__container">
-        <Slider images={backgroundImages} />
+        {/* <Slider images={backgroundImages} /> */}
       </div>
       <div className="offers__container">
-        <Offers></Offers>
-        <Deals></Deals>
+        {/* <Offers></Offers>
+        <Deals></Deals> */}
       </div>
     </div>
   );

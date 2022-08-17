@@ -1,4 +1,9 @@
+@font-face {
+    font-family: amazon;
+    src: url("E:/Work in Progress/amazon-clone/Clone/Amazon-Clone/src/Images/Amazon Ember.ttf");
+}
+
 * {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: amazon, sans-serif !important;
 }

@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import headerItems from "../../utils/items";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import "./Headings.css";
+import { logDOM } from "@testing-library/react";
 
 function Heading() {
+  const [headerServices, setheaderServices] = useState({});
+
+  useEffect(() => {
+    fetch("/Categories").then((res) => {
+      res.json().then((data) => {
+        setheaderServices(data);
+      });
+    });
+  }, []);
+
   return (
     <div className="home__header">
       <div className="home__header--headings">
         <p className="home__headings">
-          <MenuOutlinedIcon className="home__header--icon" />
+          <a href="#">
+            <MenuOutlinedIcon className="home__header--icon" />
+          </a>
           <span className="home__unique"> All </span>
         </p>
-        {headerItems &&
-          headerItems.map((item, index) => {
-            return index < 2 ? (
-              <p className="home__headings"> {item} </p>
-            ) : (
-              <p className="home__headings to__hide"> {item} </p>
-            );
-          })}
+
+        {Object.keys(Object.values(headerServices)).map((key) => {
+          // console.log(headkey);
+          return (
+            <a href="#" className="home__headings">
+              {headerServices[key]["name"]}
+            </a>
+          );
+        })}
       </div>
       <img
         className="home__header--image"
