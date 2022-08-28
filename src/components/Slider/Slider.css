@@ -1,19 +1,19 @@
 .slider {
     width: 80vh;
     max-width: 1000px;
-    overflow: hidden;
+    overflow: hidden !important;
     margin: 0;
 }
 
 .slider__centre {
     height: 250px;
-    width: 100px;
+    overflow: hidden !important;
     /* text-align: center; */
     overflow-x: hidden !important;
 }
 
-article {
-    position: absolute;
+section {
+    position: fixed;
     top: 0;
     left: 0;
     height: 50%;
@@ -33,7 +33,7 @@ article {
 }
 
 .nextSlide {
-    transform: translateX(0%);
+    transform: translateX(100%);
 }
 
 .slider__image {
@@ -41,7 +41,7 @@ article {
     width: 100%;
     z-index: -1;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .slider__prev,

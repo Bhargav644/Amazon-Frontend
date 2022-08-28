@@ -6,39 +6,57 @@ import { logDOM } from "@testing-library/react";
 
 function Heading() {
   const [headerServices, setheaderServices] = useState({});
-
+  const [navImage, setnavImage] = useState("");
   useEffect(() => {
-    fetch("/Categories").then((res) => {
-      res.json().then((data) => {
-        setheaderServices(data);
-      });
-    });
+    fetchData();
   }, []);
 
+  const fetchData = () => {
+    fetch("/Categories")
+      .then((res) => {
+        res.json().then((data) => {
+          setheaderServices(data);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    fetch("/nav-image")
+      .then((res) => {
+        res.json().then((data) => {
+          setnavImage(data["image"]);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="home__header">
       <div className="home__header--headings">
-        <p className="home__headings">
-          <a href="#">
-            <MenuOutlinedIcon className="home__header--icon" />
-          </a>
+        <a href="#" className="home__headings">
+          <MenuOutlinedIcon className="home__header--icon" />
           <span className="home__unique"> All </span>
-        </p>
+        </a>
 
-        {Object.keys(Object.values(headerServices)).map((key) => {
-          // console.log(headkey);
+        {Array.from(headerServices).map((key, index) => {
           return (
-            <a href="#" className="home__headings">
-              {headerServices[key]["name"]}
+            <a
+              key={key["id_"]}
+              name={key["name"].replace(/ /g, "+")}
+              href={
+                process.env.REACT_APP_SEARCH_URL +
+                key["name"].replace("& ", "").replace(/ /g, "+")
+              }
+              className="home__headings"
+            >
+              {key["name"]}
             </a>
           );
         })}
       </div>
-      <img
-        className="home__header--image"
-        alt="err"
-        src={require("../../Images/home__headerImage.jpg")}
-      />
+      <img className="home__header--image" alt="err" src={navImage} />
     </div>
   );
 }

@@ -1,19 +1,23 @@
-from script import getHTMLParser
-from db import setData
+from Config.db import getData
+from Config.script import getHTMLParser
+from Config.db import setData
 from bs4 import BeautifulSoup
+from uuid import uuid1
+from Config.headers import header
+
+# https://www.amazon.in/gp/goldbox
 
 
-def Deals(index=0):
+def Deals():
     '''
         working: fetches Deals of the data from site
-        args: default argument for indexing purpose
         returns: None
     '''
 
     # ?basic requirement
     dict = {'Deals': []}
     link = 'https://www.amazon.in/'
-    soupHome = getHTMLParser(link)
+    soupHome = getHTMLParser(link, header)
 
     # ?deal shoveler main element and title
 
@@ -41,7 +45,11 @@ def Deals(index=0):
 
         # ?creating object of data collected for pushing it to db
         dict['Deals'].append({
-            'image': deal_item_image, 'discount': deal_item_discount, 'name': deal_item_name})
+            'id_': str(uuid1()),
+            'image': deal_item_image,
+            'discount': deal_item_discount,
+            'name': deal_item_name
+        })
 
         # ?indexing in db
         index += 1
@@ -50,4 +58,4 @@ def Deals(index=0):
     setData('Deals', dict['Deals'])
 
 
-Deals()
+# Deals()

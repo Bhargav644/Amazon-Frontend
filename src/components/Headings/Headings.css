@@ -13,12 +13,14 @@
 .home__header--headings {
     height: 30px;
     display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
     flex: 1;
     padding: 5px;
 }
 
 .home__headings {
-    margin: 0px 3px;
+    margin: 0.9px 3px;
     font-size: 14px;
     font-weight: 500;
     color: #ffff;
@@ -26,7 +28,7 @@
     cursor: pointer;
     padding: 3px;
     align-items: center;
-    height: 18px;
+    height: 20px;
     border: 2px solid transparent;
     border-radius: 2px;
 }

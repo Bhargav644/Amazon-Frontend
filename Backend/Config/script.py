@@ -1,17 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
-from headers import headers
-from db import setData
 
 
-def getHTMLParser(link):
+def getHTMLParser(link, header):
     ''' 
         working: fetches data from website as html
         args: respective link
         returns: HTML parser object 
     '''
     urlHome = link
-    homePage = requests.get(urlHome)
+    homePage = requests.get(urlHome, headers=header)
     soupHome = BeautifulSoup(homePage.content, 'html.parser')
     return soupHome
 

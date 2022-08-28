@@ -1,13 +1,14 @@
-from unicodedata import category
-from script import getHTMLParser
-from db import setData, getData
+
+from pickletools import uint2
+from Config.script import getHTMLParser
+from Config.db import setData, getData
 from bs4 import BeautifulSoup
+from uuid import uuid1
 
 
-def Categories(index=0):
+def Categories():
     '''
         working: fetches Categories of the header part from website
-        args: default argument for indexing purpose
         returns: None
     '''
 
@@ -22,8 +23,10 @@ def Categories(index=0):
 
         # ?indexing in db
         if(i >= 10 and i <= 20):
-            dict['Categories'].append({'name': (li.text).replace(' ', '')})
-            index += 1
+            dict['Categories'].append(
+                {'id_': str(uuid1()),
+                 'name': (li.text).strip(),
+                 })
 
     setData('Categories', dict['Categories'])
 

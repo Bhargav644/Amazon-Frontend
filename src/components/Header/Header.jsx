@@ -11,7 +11,7 @@ function Header() {
   return (
     <nav className="header">
       <div className="header__responsive">
-        <Link to="/" class="header__option">
+        <Link to="/" className="header__option">
           <img
             className="header__logo header__boxes"
             src={require("../../Images/logo.png")}
@@ -30,7 +30,7 @@ function Header() {
         </Link>
         {/* for responsiveness */}
       </div>
-      <Link to="/address" class="header__option">
+      <Link to="/address" className="header__option">
         <div className="header__address header__boxes header__hide">
           <LocationOnOutlinedIcon className="header__address--icon" />
           <div className="header__inside">
@@ -47,7 +47,9 @@ function Header() {
       <div className="header__search">
         <select id="here" className="header__select">
           {headerServices &&
-            headerServices.map((service, index) => <option>{service}</option>)}
+            headerServices.map((service, index) => (
+              <option key={index}>{service}</option>
+            ))}
         </select>
         <input
           autoComplete="off"

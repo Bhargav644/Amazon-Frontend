@@ -18,7 +18,7 @@ function Address() {
             options
           </p>
           <Link to="/login">
-            <button class="login__button ">
+            <button className="login__button ">
               Sign in to see your addresses
             </button>
           </Link>
@@ -27,9 +27,9 @@ function Address() {
             <span className="main__text2">or enter an Indian pincode</span>
             <hr />
           </div>
-          <section className="main__footer">
+          <article className="main__footer">
             <input
-              autocomplete="off"
+              autoComplete="off"
               id="get"
               type="digits"
               className="main__input"
@@ -39,7 +39,7 @@ function Address() {
                 Apply
               </button>
             </Link>
-          </section>
+          </article>
         </div>
       </div>
     </div>

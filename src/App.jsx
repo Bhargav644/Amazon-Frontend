@@ -4,11 +4,12 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import { Fragment } from "react";
 import Address from "./pages/Address/Address";
-
+import Admin from "./pages/Admin/Admin";
 function App() {
   return (
     <Router>
       <Routes>
+        {/* route for home page */}
         <Route
           path="/"
           exact
@@ -18,6 +19,7 @@ function App() {
             </Fragment>
           }
         />
+        {/* route for address page */}
         <Route
           path="/address"
           exact
@@ -27,12 +29,23 @@ function App() {
             </Fragment>
           }
         />
+        {/* route for login page */}
         <Route
           path="/login"
           exact
           element={
             <Fragment>
               <Header /> <Home />
+            </Fragment>
+          }
+        />
+        {/* route for admin page */}
+        <Route
+          path="/admin"
+          exact
+          element={
+            <Fragment>
+              <Admin></Admin>
             </Fragment>
           }
         />
