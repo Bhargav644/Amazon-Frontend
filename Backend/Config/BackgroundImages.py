@@ -8,15 +8,15 @@ from selenium.webdriver.common.keys import Keys
 import time
 from tkinter import Tk
 from pynput.keyboard import Key, Controller
-from Backend.Config.db import getData
-from Config.script import getHTMLParser
-from Config.headers import header
-from Config.db import setData
+from db import getData
+from script import getHTMLParser
+from headers import header
+from db import setData
 
 
 def BackImages():
     '''
-        working: fetches header services of the data from site
+        working: fetches background images
         returns: None
     '''
 
@@ -74,9 +74,5 @@ def BackImages():
             temp.append(value)
             images_without_duplicacy[key] = value
 
-    print(images_without_duplicacy)
     if(len(getData("BackgroundImages")) < len(images_without_duplicacy)):
         setData("BackgroundImages", images_without_duplicacy)
-
-
-BackImages()

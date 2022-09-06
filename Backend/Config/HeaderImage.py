@@ -1,7 +1,7 @@
-from Config.script import getHTMLParser
-from Config.db import setData
+from script import getHTMLParser
+from db import setData
 from bs4 import BeautifulSoup
-from Config.headers import header
+from headers import header
 
 
 def Image():
@@ -20,8 +20,8 @@ def Image():
     for li in nav_right:
         if(li.find('img')):
             dict['image'] = li.find('img')['src']
-
-    setData('nav-image', dict)
+    if(dict['image']):
+        setData('nav-image', dict)
 
 
 # Image()

@@ -1,15 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import headerItems from "../../utils/items";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import Side from "./Side";
 import "./Headings.css";
-import { logDOM } from "@testing-library/react";
+// import { Link } from "react-router-dom";
 
 function Heading() {
   const [headerServices, setheaderServices] = useState({});
   const [navImage, setnavImage] = useState("");
+  const [Clicked, setClicked] = useState(false);
   useEffect(() => {
     fetchData();
   }, []);
+
+  function adjust() {
+    setClicked(true);
+    setTimeout(() => {
+      setClicked(false);
+    }, 1000);
+    // setDis("block");
+  }
 
   const fetchData = () => {
     fetch("/Categories")
@@ -34,8 +44,17 @@ function Heading() {
   };
   return (
     <div className="home__header">
+      {/* <Link to="/">
+        <div style={{ display: dis }} className="background__mask"></div>
+      </Link> */}
+      <Side clicked={Clicked} />
       <div className="home__header--headings">
-        <a href="#" className="home__headings">
+        <a
+          onClick={adjust}
+          id="specific__heading"
+          href="#"
+          className="home__headings"
+        >
           <MenuOutlinedIcon className="home__header--icon" />
           <span className="home__unique"> All </span>
         </a>
@@ -56,7 +75,9 @@ function Heading() {
           );
         })}
       </div>
-      <img className="home__header--image" alt="err" src={navImage} />
+      {navImage != "" && (
+        <img className="home__header--image" alt="err" src={navImage} />
+      )}
     </div>
   );
 }

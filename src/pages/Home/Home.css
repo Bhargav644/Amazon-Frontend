@@ -3,3 +3,11 @@
     overflow: hidden;
     z-index: -1 !important;
 }
+
+.deals__container {
+    background-color: rgba(36, 36, 36, 0.08);
+}
+
+.cards__container {
+    background-color: rgba(36, 36, 36, 0.08);
+}

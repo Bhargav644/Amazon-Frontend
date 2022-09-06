@@ -6,8 +6,13 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import headerServices from "../../utils/services";
 import { focus, blur } from "./functions";
-
+export let UserName = "sign in";
 function Header() {
+  const [username, setUsername] = useState(" sign in");
+  useEffect(() => {
+    UserName = username;
+  }, [username]);
+
   return (
     <nav className="header">
       <div className="header__responsive">
@@ -67,7 +72,7 @@ function Header() {
         </div>
         <Link to="/login" className="header__option">
           <div className="header__login header__boxes header__hide">
-            <span className="header__option1"> Hello, Sign in </span> <br />
+            <span className="header__option1"> Hello,{username}</span> <br />
             <span className="header__option2"> Accounts & Lists </span>
           </div>
         </Link>

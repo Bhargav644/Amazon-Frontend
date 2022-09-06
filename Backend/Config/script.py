@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
+from headers import header
 
 
-def getHTMLParser(link, header):
+def getHTMLParser(link, header=header):
     ''' 
         working: fetches data from website as html
         args: respective link

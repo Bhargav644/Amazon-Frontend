@@ -1,9 +1,9 @@
-from Config.db import getData
-from Config.script import getHTMLParser
-from Config.db import setData
+from db import getData
+from script import getHTMLParser
+from db import setData
 from bs4 import BeautifulSoup
 from uuid import uuid1
-from Config.headers import header
+from headers import header
 
 # https://www.amazon.in/gp/goldbox
 
@@ -23,7 +23,7 @@ def Deals():
 
     # ?deal shoveler fetches list of deals
     deal_shoveler_list = soupHome.find_all(
-        'li', class_="_deals-shoveler-v2_style_dealCard__1HqkZ")
+        'li', class_="feed-carousel-card _deals-shoveler-v2_style_dealCard__1HqkZ")
 
     # ?loop for items
     for li in deal_shoveler_list:
@@ -40,8 +40,10 @@ def Deals():
         # ? checking which of the span consits of discount rate
         deal_item_discount = " "
         for i in deal_item_span:
-            if (i.text).isnumeric():
-                deal_item_discount = i.text
+            res = (i.text).replace("₹", "")
+            # print(i.text)
+            if (res).isnumeric():
+                deal_item_discount = res
 
         # ?creating object of data collected for pushing it to db
         dict['Deals'].append({
@@ -50,12 +52,9 @@ def Deals():
             'discount': deal_item_discount,
             'name': deal_item_name
         })
-
-        # ?indexing in db
-        index += 1
-
     # ?pushing to db
-    setData('Deals', dict['Deals'])
+    if(len(dict["Deals"])):
+        setData('Deals', dict['Deals'][0:6])
 
 
-# Deals()
+Deals()

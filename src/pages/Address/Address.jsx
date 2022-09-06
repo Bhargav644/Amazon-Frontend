@@ -6,9 +6,9 @@ function Address() {
   return (
     <div className="address__main">
       <Link to="/">
-        <div className="background__mask"></div>
+        <div className="background__mask" style={{ top: window.scrollY }}></div>
       </Link>
-      <div className="main">
+      <div className="main" style={{ top: window.scrollY + 400 }}>
         <header className="main__header">
           <p className="header__text">Choose your location</p>{" "}
         </header>

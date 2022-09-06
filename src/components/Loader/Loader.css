@@ -1,0 +1,9 @@
+#loader {
+    background-color: rgb(253, 251, 251);
+    z-index: 400;
+}
+
+#loader>img {
+    width: 20px;
+    height: 20px;
+}

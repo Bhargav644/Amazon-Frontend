@@ -20,4 +20,5 @@ function getLocation() {
         console.log("Invalid ZipCode");
     }
 }
+
 export default getLocation;

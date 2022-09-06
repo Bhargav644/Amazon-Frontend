@@ -1,7 +1,7 @@
 
 from pickletools import uint2
-from Config.script import getHTMLParser
-from Config.db import setData, getData
+from script import getHTMLParser
+from db import setData, getData
 from bs4 import BeautifulSoup
 from uuid import uuid1
 
@@ -31,4 +31,4 @@ def Categories():
     setData('Categories', dict['Categories'])
 
 
-Categories()
+# Categories()

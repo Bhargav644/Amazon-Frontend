@@ -2,9 +2,17 @@ import React from "react";
 import "./Home.css";
 import Heading from "../../components/Headings/Headings";
 import Slider from "../../components/Slider/Slider";
-// import Offers from "../../components/Offers/Offers";
-// import Deals from "../../components/Deals/Deals";
+import Cards from "../../components/Cards/Cards";
+import { useLocation } from "react-router-dom";
+import Deals from "../../components/Deals/Deals";
+import Footer from "../../components/Footer/Footer";
 function Home() {
+  let location = useLocation();
+  if (location.pathname == "/address") {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
   return (
     <div className="home">
       <Heading />
@@ -16,9 +24,14 @@ function Home() {
           <Slider />
         </a>
       </div>
-      <div className="offers__container">
-        {/* <Offers></Offers>
-        <Deals></Deals> */}
+      <div className="cards__container">
+        <Cards />
+      </div>
+      <div className="deals__container">
+        <Deals />
+      </div>
+      <div className="footer__container">
+        <Footer />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
 }
 
 section {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     height: 50%;
@@ -33,7 +33,7 @@ section {
 }
 
 .nextSlide {
-    transform: translateX(100%);
+    transform: translateX(0%);
 }
 
 .slider__image {
