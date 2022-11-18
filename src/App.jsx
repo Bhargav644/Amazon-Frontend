@@ -10,6 +10,9 @@ import Header from "./components/Header/Header";
 import { Fragment } from "react";
 import Address from "./pages/Address/Address";
 import Admin from "./pages/Admin/Admin";
+import Error from "../src/pages/Error/Error";
+import Search from "./pages/Search/Search";
+import Heading from "./components/Headings/Headings";
 function App() {
   return (
     <Router>
@@ -40,7 +43,8 @@ function App() {
           exact
           element={
             <Fragment>
-              <Header /> <Home />
+              <Header />
+              <Home />
             </Fragment>
           }
         />
@@ -51,6 +55,24 @@ function App() {
           element={
             <Fragment>
               <Admin />
+            </Fragment>
+          }
+        />
+        <Route
+          path="/s&k=/*"
+          element={
+            <Fragment>
+              <Header />
+              <Heading />
+              <Search />
+            </Fragment>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Fragment>
+              <Error />
             </Fragment>
           }
         />

@@ -32,6 +32,9 @@ def Footer():
 
         main.append(footer)
 
+    # if(main==None){
+    #     getData
+    # }
     setData("Footer", main)
 
 

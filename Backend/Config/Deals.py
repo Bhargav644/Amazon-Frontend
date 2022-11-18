@@ -54,7 +54,7 @@ def Deals():
         })
     # ?pushing to db
     if(len(dict["Deals"])):
-        setData('Deals', dict['Deals'][0:6])
+        setData('Deals', dict['Deals'])
 
 
-Deals()
+# Deals()

@@ -38,7 +38,7 @@ function Cards() {
           })
         ) : (
           <Loader>
-            {(document.body.style.background = "rgb(219,219,219)")}
+            {(document.body.style.background = "rgb(210,210,210)")}
           </Loader>
         )}
       </div>

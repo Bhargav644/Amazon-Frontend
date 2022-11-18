@@ -3,7 +3,7 @@ import headerItems from "../../utils/items";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import Side from "./Side";
 import "./Headings.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Heading() {
   const [headerServices, setheaderServices] = useState({});

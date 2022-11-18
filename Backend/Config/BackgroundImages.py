@@ -13,6 +13,9 @@ from script import getHTMLParser
 from headers import header
 from db import setData
 
+import chromedriver_autoinstaller
+chromedriver_autoinstaller.install()
+
 
 def BackImages():
     '''

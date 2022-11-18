@@ -9,10 +9,13 @@ import { focus, blur } from "./functions";
 export let UserName = "sign in";
 function Header() {
   const [username, setUsername] = useState(" sign in");
+  const [toSearch, setToSearch] = useState("");
   useEffect(() => {
     UserName = username;
   }, [username]);
-
+  const handler = (event) => {
+    setToSearch(event.target.value);
+  };
   return (
     <nav className="header">
       <div className="header__responsive">
@@ -63,8 +66,15 @@ function Header() {
           className="header__searchinput"
           onFocus={focus}
           onBlur={blur}
+          value={toSearch}
+          onChange={handler}
         />
-        <SearchIcon id="icon" className="header__search--icon" />
+        <a
+          href={process.env.REACT_APP_SEARCH_URL + toSearch}
+          className="searching__input"
+        >
+          <SearchIcon id="icon" className="header__search--icon" />
+        </a>
       </div>
       <div className="header__navbar">
         <div className="header__boxes header__hide header__fun">

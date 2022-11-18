@@ -1,4 +1,5 @@
 
+from pickle import TRUE
 from flask import Flask, request
 from db import getData, setData
 import bcrypt
@@ -9,6 +10,7 @@ from HeaderImage import Image
 from password import salt
 from BackgroundImages import BackImages
 from Footer import Footer
+from Searching import Searching
 app = Flask(__name__)
 
 #!Categories
@@ -96,6 +98,14 @@ def checkCred():
             flag = True
 
     return {"authentication": flag}
+
+#!Searching
+
+
+@app.route("/Search", methods=["POST", "GET"])
+def getSearch():
+    data = Searching(request.json['tag'])
+    return data
 
 
 if __name__ == "__main__":

@@ -1,0 +1,140 @@
+.item_container {
+    /* padding: 2px; */
+    display: flex;
+    height: 258px;
+    margin-top: 20px;
+    box-shadow: 0px 0.3px 0.3px 0.3px rgba(87, 87, 87, 0.4);
+    cursor: pointer;
+}
+
+.item_container .image_container {
+    max-width: 40%;
+    min-width: 30vw;
+    box-sizing: border-box;
+    position: relative;
+    background-color: rgba(203, 203, 203, 0.4);
+}
+
+.item_container .image_container img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 97%;
+    max-height: 97%;
+}
+
+.data_container {
+    padding: 20px;
+    text-overflow: ellipsis;
+}
+
+.data__heading {
+    display: flex;
+}
+
+.ellipsis {
+    transform: translateY(28px);
+    display: none;
+}
+
+.data_container .data__title {
+    font-size: 18px;
+    color: #0F1111;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    width: 95%;
+    height: 50px;
+    line-height: 25px;
+}
+
+.hover__class:hover {
+    color: rgb(253, 139, 46);
+    transition: all 0.3s;
+}
+
+.item__star {
+    color: rgb(255, 153, 0);
+    width: 20px !important;
+    margin: 0px -2px;
+}
+
+.items__ratings {
+    text-align: left;
+    display: flex;
+}
+
+.item__total__ratings {
+    font-size: 13.5px;
+    color: #007185;
+    display: block;
+    transform: translate(5px, 4.5px);
+}
+
+@media only screen and (max-width:1200px) {
+    .ellipsis {
+        transform: translateY(28px);
+        display: block;
+    }
+    .data_container .data__title {
+        width: 90%;
+    }
+}
+
+.item__price span {
+    display: inline-block;
+}
+
+.item__price {
+    margin: 5px 0px;
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 15px;
+}
+
+.rupee {
+    font-size: 13px;
+    transform: translateY(-5px);
+}
+
+.price__font {
+    font-size: 0.8em;
+    color: #565959;
+}
+
+.item__real__price {
+    text-decoration: line-through;
+}
+
+.item__price__after {
+    font-size: 22px;
+}
+
+@media only screen and (max-width:500px) {
+    .price__font {
+        font-size: 12px;
+    }
+}
+
+.item__arrival {
+    /* width: 40vw; */
+    /* display: flex; */
+    margin: 5px 0px;
+    font-size: 14px;
+}
+
+.item__arrival p {
+    transform: translateY(5px);
+}
+
+.item__arrival img {
+    transform: translateY(5px);
+}
+
+.exact__arrival {
+    font-weight: 600;
+}
