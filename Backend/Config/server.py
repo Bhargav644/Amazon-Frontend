@@ -8,15 +8,24 @@ from Deals import Deals
 from CardsLayouts import Cards
 from HeaderImage import Image
 from password import salt
+from flask.helpers import send_from_directory
 from BackgroundImages import BackImages
 from Footer import Footer
 from Searching import Searching
-app = Flask(__name__)
-
+from flask_cors import CORS, cross_origin
+app = Flask(__name__, static_folder='Amazon-Clone/build', static_url_path='')
+CORS(app)
 #!Categories
 
 
+@app.route('/')
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
+
+
 @app.route("/Categories", methods=["POST", "GET"])
+@cross_origin()
 def fetchCategories():
     if request.method == "POST":
         Categories()
@@ -26,6 +35,7 @@ def fetchCategories():
 
 
 @app.route("/Deals", methods=["POST", "GET"])
+@cross_origin()
 def fetchDeals():
     if request.method == "POST":
         Deals()
@@ -35,6 +45,7 @@ def fetchDeals():
 
 
 @app.route("/Cards", methods=["POST", "GET"])
+@cross_origin()
 def fetchCards():
     if request.method == "POST":
         Cards()
@@ -44,6 +55,7 @@ def fetchCards():
 
 
 @app.route("/Footer", methods=["POST", "GET"])
+@cross_origin()
 def fetchFooter():
     if request.method == "POST":
         Footer()
@@ -53,6 +65,7 @@ def fetchFooter():
 
 
 @app.route("/nav-image", methods=["POST", "GET"])
+@cross_origin()
 def fetchNavImage():
     if request.method == "POST":
         Image()
@@ -62,6 +75,7 @@ def fetchNavImage():
 
 
 @app.route("/BackgroundImages", methods=["POST", "GET"])
+@cross_origin()
 def fetchBGImage():
     if request.method == "POST":
         BackImages()
@@ -70,18 +84,21 @@ def fetchBGImage():
 
 #!Credentials
 @app.route("/Credentials")
+@cross_origin()
 def fetchCredentials():
     return getData("Credentials")
 
 
 #!HMenu
 @app.route("/HMenu")
+@cross_origin()
 def fetchHMenu():
     return getData("HMenu")
 
 
 #!Credentials
 @app.route("/Cred", methods=["POST"])
+@cross_origin()
 def checkCred():
 
     flag = False
@@ -103,6 +120,7 @@ def checkCred():
 
 
 @app.route("/Search", methods=["POST", "GET"])
+@cross_origin()
 def getSearch():
     data = Searching(request.json['tag'])
     return data
