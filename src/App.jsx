@@ -9,7 +9,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import { Fragment } from "react";
 import Address from "./pages/Address/Address";
-import Admin from "./pages/Admin/Admin";
+import AdminF from "./pages/AdminF/Admin";
 import Error from "../src/pages/Error/Error";
 import Search from "./pages/Search/Search";
 import Heading from "./components/Headings/Headings";
@@ -54,7 +54,7 @@ function App() {
           exact
           element={
             <Fragment>
-              <Admin />
+              <AdminF />
             </Fragment>
           }
         />
