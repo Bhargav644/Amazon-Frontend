@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import headerItems from "../../utils/items";
+import React, { useState, useEffect } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import Side from "./Side";
 import "./Headings.css";
-import { Link } from "react-router-dom";
 
 function Heading() {
   const [headerServices, setheaderServices] = useState({});
@@ -75,7 +73,7 @@ function Heading() {
           );
         })}
       </div>
-      {navImage != "" && (
+      {navImage !== "" && (
         <img className="home__header--image" alt="err" src={navImage} />
       )}
     </div>

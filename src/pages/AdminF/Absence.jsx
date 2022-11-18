@@ -14,6 +14,7 @@ function Absence() {
         .catch((err) => {
           console.log(err);
         });
+      return {};
     });
   };
   const updateCards = () => {
@@ -30,7 +31,7 @@ function Absence() {
     axios
       .post("/BackgroundImages", {})
       .then((res) => {
-        console.log("Background Images" + " Updated");
+        console.log("Background Images Updated");
       })
       .catch((err) => {
         console.log(err);

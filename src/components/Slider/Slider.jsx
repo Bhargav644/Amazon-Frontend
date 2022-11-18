@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ImgHTMLAttributes } from "react";
+import React, { useEffect, useState } from "react";
 import "./Slider.css";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";

@@ -1,8 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import SearchComponent from "./SearchComponent";
-import { useLocation } from "react-router-dom";
 function Search() {
   const path = window.location.pathname;
   const [tag, setTag] = useState(path.replace("/s&k=/", ""));
@@ -22,7 +21,7 @@ function Search() {
     setTag(path.replace("/s&k=/", ""));
     getDataUsingTag(tag);
   }, []);
-  return containers.length == 0 ? (
+  return containers.length === 0 ? (
     <center style={{ marginTop: "350px" }}>
       <Loader></Loader>
     </center>

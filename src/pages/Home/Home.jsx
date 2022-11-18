@@ -8,7 +8,7 @@ import Deals from "../../components/Deals/Deals";
 import Footer from "../../components/Footer/Footer";
 function Home() {
   let location = useLocation();
-  if (location.pathname == "/address") {
+  if (location.pathname === "/address") {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "auto";
