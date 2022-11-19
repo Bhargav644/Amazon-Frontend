@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Slider.css";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
-
+import { baseURL } from "../../config";
 const Slider = () => {
   const [index, setIndex] = useState(0);
   const [BGImages, setBGImages] = useState([]);
   //   when  we recieve change in index and image then this useEffect will be called
 
   useEffect(() => {
-    fetch("/BackgroundImages")
+    fetch(`${baseURL}/BackgroundImages`)
       .then((res) => {
         res.json().then((data) => {
           setBGImages(Object.values(data));

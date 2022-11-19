@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Admin.css";
 import FormPage from "./FormPage";
 import Absence from "./Absence";
+import { baseURL } from "../../config";
 function Admin() {
   const [authenticated, setAuthenticated] = useState(false);
   useEffect(() => {}, [authenticated]);
@@ -10,7 +11,7 @@ function Admin() {
   //login works here
   function login(credentials) {
     axios
-      .post("/Cred", credentials)
+      .post(`${baseURL}/Cred`, credentials)
       .then((res) => {
         if (!res["data"]["authentication"]) {
           alert("Credentials are not correct,Are u really Admin");

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./Headings.css";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
+import { baseURL } from "../../config";
 import { UserName } from "../Header/Header";
 function Inside() {
   const [hdata, setHdata] = useState([]);
 
   useEffect(() => {
-    fetch("/HMenu")
+    fetch(`${baseURL}/HMenu`)
       .then((res) => {
         res.json().then((data) => {
           setHdata(data);
@@ -32,12 +32,11 @@ function Inside() {
           if (key.heading) {
             return <h3 key={key.id}>{key.title}</h3>;
           } else if (key.sep) {
-            return <hr key={key.id}></hr>;
+            return <hr key={index}></hr>;
           } else {
             return (
-              <>
+              <Fragment key={key.id}>
                 <a
-                  key={key.id}
                   name={key["title"].replace(/ /g, "+")}
                   href={
                     process.env.REACT_APP_SEARCH_URL +
@@ -50,7 +49,7 @@ function Inside() {
                 <br />
                 <br />
                 <br />
-              </>
+              </Fragment>
             );
           }
         })}

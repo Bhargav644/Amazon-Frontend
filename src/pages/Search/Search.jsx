@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import SearchComponent from "./SearchComponent";
+import { baseURL } from "../../config";
 function Search() {
   const path = window.location.pathname;
   const [tag, setTag] = useState(path.replace("/s&k=/", ""));
@@ -9,7 +10,7 @@ function Search() {
   const [containers, setContainers] = useState([]);
   const getDataUsingTag = (tag) => {
     axios
-      .post("/Search", { tag: tag })
+      .post(`${baseURL}/Search`, { tag: tag })
       .then((res) => {
         setContainers(res.data);
       })

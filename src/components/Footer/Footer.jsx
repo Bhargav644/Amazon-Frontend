@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import LanguageSharpIcon from "@mui/icons-material/LanguageSharp";
 import Foot from "./Foot";
 import "./footer.css";
+import { baseURL } from "../../config";
 function Footer() {
   const [footer, setFooter] = useState([]);
 
   useEffect(() => {
-    fetch("/Footer")
+    fetch(`${baseURL}/Footer`)
       .then((res) => {
         res.json().then((data) => {
           setFooter(data);

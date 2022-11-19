@@ -1,13 +1,14 @@
 import React from "react";
 import "./Admin.css";
 import axios from "axios";
+import { baseURL } from "../../config";
 function Absence() {
   const tweeks = ["Categories", "nav-image", "Deals", "Footer"];
 
   const update = () => {
     tweeks.map((value, index) => {
       axios
-        .post("/" + value, {})
+        .post(`${baseURL}/` + value, {})
         .then((res) => {
           console.log(value + " Updated");
         })
@@ -19,7 +20,7 @@ function Absence() {
   };
   const updateCards = () => {
     axios
-      .post("/Cards", {})
+      .post(`${baseURL}/Cards`, {})
       .then((res) => {
         console.log("Cards Updated");
       })
@@ -29,7 +30,7 @@ function Absence() {
   };
   const updateBG = () => {
     axios
-      .post("/BackgroundImages", {})
+      .post(`${baseURL}/BackgroundImages`, {})
       .then((res) => {
         console.log("Background Images Updated");
       })

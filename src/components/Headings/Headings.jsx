@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import Side from "./Side";
 import "./Headings.css";
-
+import { baseURL } from "../../config";
 function Heading() {
   const [headerServices, setheaderServices] = useState({});
   const [navImage, setnavImage] = useState("");
@@ -20,7 +20,7 @@ function Heading() {
   }
 
   const fetchData = () => {
-    fetch("/Categories")
+    fetch(`${baseURL}/Categories`)
       .then((res) => {
         res.json().then((data) => {
           setheaderServices(data);
@@ -30,7 +30,7 @@ function Heading() {
         console.log(err);
       });
 
-    fetch("/nav-image")
+    fetch(`${baseURL}/nav-image`)
       .then((res) => {
         res.json().then((data) => {
           setnavImage(data["image"]);

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: amazon;
+    src: url("Images/Amazon Ember.ttf");
+}
+
 * {
     margin: 0;
     font-family: amazon, sans-serif !important;
@@ -9,9 +14,4 @@ body {
 
 html {
     scroll-behavior: smooth;
-}
-
-@font-face {
-    font-family: amazon;
-    src: url("Images/Amazon Ember.ttf");
 }

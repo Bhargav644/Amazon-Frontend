@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { mouseOut, mouseOver, moveLeft, moveRight } from "./DealsFunctions";
 import "./Deals.css";
 import Item from "./Item";
+import { baseURL } from "../../config";
 function Deals() {
   const [deals, setDeals] = useState([]);
   const [padd, setPadd] = useState("0");
 
   useEffect(() => {
-    fetch("/Deals")
+    fetch(`${baseURL}/Deals`)
       .then((res) => {
         res.json().then((data) => {
           setDeals(data);

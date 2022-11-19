@@ -4,10 +4,11 @@ import Loader from "../Loader/Loader";
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
+import { baseURL } from "../../config";
 function Cards() {
   const [detail, setDetail] = useState([]);
   useEffect(() => {
-    fetch("/Cards")
+    fetch(`${baseURL}/Cards`)
       .then((res) => {
         res.json().then((data) => {
           setDetail(data);
