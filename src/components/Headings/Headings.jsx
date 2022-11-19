@@ -62,10 +62,7 @@ function Heading() {
             <a
               key={key["id_"]}
               name={key["name"].replace(/ /g, "+")}
-              href={
-                process.env.REACT_APP_SEARCH_URL +
-                key["name"].replace("& ", "").replace(/ /g, "+")
-              }
+              href={"/s&k=/" + key["name"].replace("& ", "").replace(/ /g, "+")}
               className="home__headings"
             >
               {key["name"]}

@@ -6,7 +6,7 @@ function Item(props) {
     <div className="item__main">
       <a
         href={
-          process.env.REACT_APP_SEARCH_URL +
+          "/s&k=/" +
           data["name"]
             .replace("& ", "")
             .replace("|", "")

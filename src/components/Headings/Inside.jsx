@@ -39,8 +39,7 @@ function Inside() {
                 <a
                   name={key["title"].replace(/ /g, "+")}
                   href={
-                    process.env.REACT_APP_SEARCH_URL +
-                    key["title"].replace("& ", "").replace(/ /g, "+")
+                    "/s&k=/" + key["title"].replace("& ", "").replace(/ /g, "+")
                   }
                   className="inside__menu__list"
                 >

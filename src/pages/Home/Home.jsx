@@ -17,10 +17,7 @@ function Home() {
     <div className="home">
       <Heading />
       <div className="home__container">
-        <a
-          href={process.env.REACT_APP_SEARCH_URL + "mechanical+keyboard"}
-          className="image__link"
-        >
+        <a href={"/s&k=/" + "mechanical+keyboard"} className="image__link">
           <Slider />
         </a>
       </div>

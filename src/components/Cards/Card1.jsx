@@ -8,7 +8,7 @@ function Card(props) {
       <p>{props.data.heading}</p>
       <a
         href={
-          process.env.REACT_APP_SEARCH_URL +
+          "/s&k=/" +
           data.heading
             .replace("& ", "")
             .replace("|", "")
@@ -40,7 +40,7 @@ function Card(props) {
       <footer className="card__footer">
         <a
           href={
-            process.env.REACT_APP_SEARCH_URL +
+            "/s&k=/" +
             data["heading"]
               .replace("& ", "")
               .replace("|", "")
