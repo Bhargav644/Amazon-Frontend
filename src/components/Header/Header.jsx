@@ -69,10 +69,7 @@ function Header() {
           value={toSearch}
           onChange={handler}
         />
-        <a
-          href={process.env.REACT_APP_SEARCH_URL + toSearch}
-          className="searching__input"
-        >
+        <a href={"/s&k=/" + toSearch} className="searching__input">
           <SearchIcon id="icon" className="header__search--icon" />
         </a>
       </div>
