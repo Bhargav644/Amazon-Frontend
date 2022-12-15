@@ -11,7 +11,8 @@ function Loader() {
         height={40}
         id="load"
       />
-      {(ele = document.getElementById("load"))}
+      {/* {(ele = document.getElementById("load"))} */}{" "}
+      {/*//! THis Single line f***** up  */}
     </div>
   );
 }

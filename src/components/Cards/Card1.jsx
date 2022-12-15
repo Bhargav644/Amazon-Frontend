@@ -15,6 +15,7 @@ function Card(props) {
             .replace(/ /g, "+")
             .replace(",", "")
             .replace("++", "+")
+            .replace("%", "")
         }
       >
         <div className="card__images">
